@@ -32,9 +32,11 @@ export const ContactForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const includeName = contacts.find(user => user.name === name);
+    const includeName = contacts.find(
+      user => user.name.toLowerCase() === name.toLowerCase()
+    );
     if (includeName) {
-      alert(`${name} is already in contacs`);
+      alert(`${name} is already in contacts`);
       return;
     }
 
